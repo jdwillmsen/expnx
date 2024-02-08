@@ -1,2 +1,1 @@
-npx nx format:write
-git commit --amend
+npx nx format:check
