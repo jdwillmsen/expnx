@@ -16,6 +16,7 @@
     "@angular/platform-browser-dynamic": "~17.1.0",
     "@angular/router": "~17.1.0",
     "@nx/angular": "18.0.3",
+    "express": "^4.18.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -33,6 +34,7 @@
     "@nx/cypress": "18.0.3",
     "@nx/eslint": "18.0.3",
     "@nx/eslint-plugin": "18.0.3",
+    "@nx/express": "^18.0.3",
     "@nx/jest": "18.0.3",
     "@nx/js": "18.0.3",
     "@nx/web": "18.0.3",
