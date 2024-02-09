@@ -1,0 +1,24 @@
+{
+  "name": "my-site-api",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/express/my-site-api/my-site-api/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "my-site-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "my-site-api:build:development"
+        },
+        "production": {
+          "buildTarget": "my-site-api:build:production"
+        }
+      }
+    }
+  },
+  "tags": ["type:app", "scope:my-site-api", "framework:express"]
+}
