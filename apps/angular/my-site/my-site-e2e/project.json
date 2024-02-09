@@ -1,0 +1,9 @@
+{
+  "name": "my-site-e2e",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/angular/my-site/my-site-e2e/src",
+  "targets": {},
+  "tags": ["type:app", "scope:my-site", "framework:cypress"],
+  "implicitDependencies": ["my-site"]
+}

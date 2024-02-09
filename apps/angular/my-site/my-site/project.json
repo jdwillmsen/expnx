@@ -1,0 +1,82 @@
+{
+  "name": "my-site",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "expnx",
+  "sourceRoot": "apps/angular/my-site/my-site/src",
+  "tags": ["type:app", "scope:my-site", "framework:angular"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular/my-site/my-site",
+        "index": "apps/angular/my-site/my-site/src/index.html",
+        "main": "apps/angular/my-site/my-site/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular/my-site/my-site/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular/my-site/my-site/src/favicon.ico",
+          "apps/angular/my-site/my-site/src/assets"
+        ],
+        "styles": ["apps/angular/my-site/my-site/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4370
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "my-site:build:production"
+        },
+        "development": {
+          "buildTarget": "my-site:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "my-site:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "my-site:build",
+        "port": 4370
+      }
+    }
+  }
+}

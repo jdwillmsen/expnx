@@ -1,0 +1,82 @@
+{
+  "name": "medium-clone",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "expnx",
+  "sourceRoot": "apps/angular/medium-clone/medium-clone/src",
+  "tags": ["type:app", "scope:medium-clone", "framework:angular"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular/medium-clone/medium-clone",
+        "index": "apps/angular/medium-clone/medium-clone/src/index.html",
+        "main": "apps/angular/medium-clone/medium-clone/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular/medium-clone/medium-clone/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular/medium-clone/medium-clone/src/favicon.ico",
+          "apps/angular/medium-clone/medium-clone/src/assets"
+        ],
+        "styles": ["apps/angular/medium-clone/medium-clone/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4350
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "medium-clone:build:production"
+        },
+        "development": {
+          "buildTarget": "medium-clone:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "medium-clone:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "medium-clone:build",
+        "port": 4350
+      }
+    }
+  }
+}
