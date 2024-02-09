@@ -1,0 +1,24 @@
+{
+  "name": "board-game-hoard-api",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/express/board-game-hoard-api/board-game-hoard-api/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "board-game-hoard-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "board-game-hoard-api:build:development"
+        },
+        "production": {
+          "buildTarget": "board-game-hoard-api:build:production"
+        }
+      }
+    }
+  },
+  "tags": ["type:app", "scope:board-game-hoard-api", "framework:express"]
+}
