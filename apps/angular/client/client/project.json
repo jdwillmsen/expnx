@@ -1,0 +1,80 @@
+{
+  "name": "client",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "expnx",
+  "sourceRoot": "apps/angular/client/client/src",
+  "tags": ["type:app", "scope:client", "framework:angular"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular/client/client",
+        "index": "apps/angular/client/client/src/index.html",
+        "browser": "apps/angular/client/client/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular/client/client/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular/client/client/src/favicon.ico",
+          "apps/angular/client/client/src/assets"
+        ],
+        "styles": ["apps/angular/client/client/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4300
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "client:build:production"
+        },
+        "development": {
+          "buildTarget": "client:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "client:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "client:build",
+        "port": 4300,
+        "staticFilePath": "dist/apps/angular/client/client/browser"
+      }
+    }
+  }
+}
