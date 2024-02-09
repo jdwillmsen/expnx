@@ -1,0 +1,9 @@
+{
+  "name": "e-commerce-e2e",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/angular/e-commerce/e-commerce-e2e/src",
+  "targets": {},
+  "tags": ["type:app", "scope:client", "framework:cypress"],
+  "implicitDependencies": ["e-commerce"]
+}
