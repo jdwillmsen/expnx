@@ -1,0 +1,8 @@
+{
+  "name": "review",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/react/review/review/src",
+  "projectType": "application",
+  "targets": {},
+  "tags": ["type:app", "scope:review", "framework:react"]
+}
