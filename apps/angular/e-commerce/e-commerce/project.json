@@ -4,23 +4,34 @@
   "projectType": "application",
   "prefix": "expnx",
   "sourceRoot": "apps/angular/e-commerce/e-commerce/src",
-  "tags": ["type:app", "scope:e-commerce", "framework:angular"],
+  "tags": [
+    "type:app",
+    "scope:e-commerce",
+    "framework:angular"
+  ],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/angular/e-commerce/e-commerce",
         "index": "apps/angular/e-commerce/e-commerce/src/index.html",
         "main": "apps/angular/e-commerce/e-commerce/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/angular/e-commerce/e-commerce/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/angular/e-commerce/e-commerce/src/favicon.ico",
           "apps/angular/e-commerce/e-commerce/src/assets"
         ],
-        "styles": ["apps/angular/e-commerce/e-commerce/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/pink-bluegrey.css",
+          "apps/angular/e-commerce/e-commerce/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
