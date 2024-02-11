@@ -1,7 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
 import {
-  categoryActions,
   categoryActionSuccess,
   categoryActionFailure,
 } from './category.actions';
