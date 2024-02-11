@@ -1,0 +1,26 @@
+{
+  "name": "product",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/e-commerce/feature/product/src",
+  "prefix": "expnx",
+  "tags": ["type:feature", "scope:e-commerce", "framework:angular"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/angular/e-commerce/feature/product/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular/e-commerce/feature/product/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular/e-commerce/feature/product/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

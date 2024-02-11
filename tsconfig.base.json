@@ -10,10 +10,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -23,11 +20,11 @@
       ],
       "@expnx/angular/e-commerce/feature/home": [
         "libs/angular/e-commerce/feature/home/src/index.ts"
+      ],
+      "@expnx/angular/e-commerce/feature/product": [
+        "libs/angular/e-commerce/feature/product/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
