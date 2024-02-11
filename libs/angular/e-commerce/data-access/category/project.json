@@ -1,0 +1,9 @@
+{
+  "name": "category",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular/e-commerce/data-access/category/src",
+  "prefix": "expnx",
+  "tags": ["type:data-access", "scope:e-commerce", "framework:angular"],
+  "projectType": "library",
+  "targets": {}
+}

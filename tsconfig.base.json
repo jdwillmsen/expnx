@@ -18,6 +18,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@expnx/angular/e-commerce/data-access/category": [
+        "libs/angular/e-commerce/data-access/category/src/index.ts"
+      ],
       "@expnx/angular/e-commerce/feature/home": [
         "libs/angular/e-commerce/feature/home/src/index.ts"
       ]
