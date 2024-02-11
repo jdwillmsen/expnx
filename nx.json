@@ -34,6 +34,11 @@
     "e2e": {
       "cache": true,
       "inputs": ["default", "^production"]
+    },
+    "@nx/angular:ng-packagr-lite": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "plugins": [
@@ -92,6 +97,13 @@
         "style": "scss",
         "linter": "eslint"
       }
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "scss"
     }
   },
   "nxCloudAccessToken": "OGI3MDM1ZDMtYzM4MS00NDVkLThhZmYtY2RhMjhiNWNiNGE4fHJlYWQtd3JpdGU="
