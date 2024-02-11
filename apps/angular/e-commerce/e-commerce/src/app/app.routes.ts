@@ -1,8 +1,11 @@
 import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
-    // {
-    //     path: 'category/:name',
-    //     loadComponent: () => 
-    // }
+  {
+    path: 'category/:categoryName',
+    loadComponent: () =>
+      import('@expnx/angular/e-commerce/feature/product').then(
+        (m) => m.ProductComponent
+      ),
+  },
 ];
