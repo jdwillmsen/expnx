@@ -100,10 +100,14 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "style": "scss",
+      "buildable": true,
+      "standalone": true
     },
     "@nx/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "standalone": true
     }
   },
   "nxCloudAccessToken": "OGI3MDM1ZDMtYzM4MS00NDVkLThhZmYtY2RhMjhiNWNiNGE4fHJlYWQtd3JpdGU="
