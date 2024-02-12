@@ -1,4 +1,4 @@
-import { props, createActionGroup } from '@ngrx/store';
+import { props, createActionGroup, emptyProps } from '@ngrx/store';
 
 // TODO: Extract this out into data-access service
 
@@ -14,8 +14,9 @@ export interface Product {
 export const productActions = createActionGroup({
   source: 'Product',
   events: {
-    'Load Product': props<{ name: string }>(),
-    'Product Success': props<{ products: Product[] }>(),
-    'Product Failure': props<{ error: string }>(),
+    loadProduct: emptyProps(),
+    loadProductByCategory: props<{ category: string }>(),
+    productSuccess: props<{ products: Product[] }>(),
+    productFailure: props<{ error: string }>(),
   },
 });
