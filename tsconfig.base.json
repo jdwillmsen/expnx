@@ -29,6 +29,9 @@
       ],
       "@expnx/angular/e-commerce/feature/product": [
         "libs/angular/e-commerce/feature/product/src/index.ts"
+      ],
+      "@expnx/angular/feature/user": [
+        "libs/angular/e-commerce/feature/user/src/index.ts"
       ]
     }
   },
