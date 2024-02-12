@@ -1,5 +1,6 @@
 /* eslint-disable @nx/enforce-module-boundaries */
 import { Route } from '@angular/router';
+import { cartFeature, loadCart } from '@expnx/angular/e-commerce/feature/cart';
 import {
   loadProducts,
   productFeature,
@@ -35,5 +36,13 @@ export const appRoutes: Route[] = [
       provideState(productFeature),
       provideEffects({ loadProducts, loadProductsByCategory }),
     ],
+  },
+  {
+    path: 'cart',
+    loadComponent: () =>
+      import('@expnx/angular/e-commerce/feature/cart').then(
+        (m) => m.CartComponent
+      ),
+    providers: [provideState(cartFeature), provideEffects({ loadCart })],
   },
 ];

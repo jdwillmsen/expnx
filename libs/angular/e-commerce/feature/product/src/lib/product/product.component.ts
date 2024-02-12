@@ -1,13 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Store } from '@ngrx/store';
-import { productActions } from '../store/product.actions';
-import {
-  selectProducts,
-  selectProductsByCategory,
-} from '../store/product.selector';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { Store } from '@ngrx/store';
+import { productActions } from '../store/product.actions';
+import { selectProducts } from '../store/product.selector';
 
 @Component({
   selector: 'expnx-product',
