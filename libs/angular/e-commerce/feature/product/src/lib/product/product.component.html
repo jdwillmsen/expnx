@@ -2,25 +2,27 @@
 <hr />
 
 <ng-container *ngIf="products$ | async as products">
-  <div *ngFor="let product of products">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{ product.title }}</mat-card-title>
-        <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
-      </mat-card-header>
-      <img
-        mat-card-md-image
-        src="{{ product.image }}"
-        alt="{{ product.title }}"
-      />
-      <mat-card-content>
-        <p>{{ product.description }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Buy Now</button>
-        <button mat-raised-button color="accent">Add to Cart</button>
-      </mat-card-actions>
-    </mat-card>
+  <div class="products-container">
+    <div *ngFor="let product of products" class="product-item">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ product.title }}</mat-card-title>
+          <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
+        </mat-card-header>
+        <img
+          mat-card-md-image
+          src="{{ product.image }}"
+          alt="{{ product.title }}"
+        />
+        <mat-card-content class="mat-card-actions">
+          <p>{{ product.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Buy Now</button>
+          <button mat-raised-button color="accent">Add to Cart</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </ng-container>

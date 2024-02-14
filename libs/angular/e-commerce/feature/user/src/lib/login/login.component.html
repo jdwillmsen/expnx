@@ -1,0 +1,64 @@
+@if (search.value) {
+  <div>{{ search.value }}</div>
+} @else {
+  <div>No input value</div>
+}
+<input type="text" placeholder="search text" [formControl]="search" />
+<div>Value: {{ loginForm.value | json }}</div>
+<div>Valid: {{ loginForm.valid | json }}</div>
+<div>Invalid: {{ loginForm.invalid | json }}</div>
+<div>Status: {{ loginForm.status | json }}</div>
+<div>Pristine: {{ loginForm.pristine | json }}</div>
+<div>Dirty: {{ loginForm.dirty | json }}</div>
+<div>Touched: {{ loginForm.touched | json }}</div>
+<div>Untouched: {{ loginForm.untouched | json }}</div>
+
+<div>Username Errors: {{ loginForm.get('username')?.errors | json }}</div>
+<div>
+  Username Has Error: {{ loginForm.hasError('email', 'username') | json }}
+</div>
+<div>Username Get Error: {{ loginForm.getError('email') | json }}</div>
+<div>Username Get Error: {{ loginForm.get('username')?.errors | json }}</div>
+
+<form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+  <mat-form-field class="full-width">
+    <input
+      matInput
+      type="text"
+      placeholder="username"
+      formControlName="username"
+    />
+    <mat-hint>The username is your email address</mat-hint>
+    @if (loginForm.hasError('email', 'username')) {
+      <mat-error>The username should be a valid email address</mat-error>
+    }
+    @if (loginForm.hasError('required', 'username')) {
+      <mat-error>This field is required</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input
+      matInput
+      type="password"
+      placeholder="password"
+      formControlName="password"
+    />
+    @if (loginForm.hasError('minlength', 'password')) {
+      <mat-error>The password should be at least 8 characters long</mat-error>
+    }
+    @if (loginForm.hasError('maxlength', 'password')) {
+      <mat-error>The password should be at max 16 characters long</mat-error>
+    }
+    @if (loginForm.hasError('required', 'password')) {
+      <mat-error>This field is required</mat-error>
+    }
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="loginForm.invalid"
+  >
+    Login
+  </button>
+</form>

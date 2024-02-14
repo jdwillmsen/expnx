@@ -12,14 +12,21 @@ import { provideState } from '@ngrx/store';
 export const appRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'product',
+    redirectTo: 'login',
     pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('@expnx/angular/e-commerce/feature/user').then(
+        (m) => m.LoginComponent,
+      ),
   },
   {
     path: 'product',
     loadComponent: () =>
       import('@expnx/angular/e-commerce/feature/product').then(
-        (m) => m.ProductComponent
+        (m) => m.ProductComponent,
       ),
     providers: [
       provideState(productFeature),
@@ -30,7 +37,7 @@ export const appRoutes: Route[] = [
     path: 'product/:categoryName',
     loadComponent: () =>
       import('@expnx/angular/e-commerce/feature/product').then(
-        (m) => m.ProductComponent
+        (m) => m.ProductComponent,
       ),
     providers: [
       provideState(productFeature),
@@ -41,7 +48,7 @@ export const appRoutes: Route[] = [
     path: 'cart',
     loadComponent: () =>
       import('@expnx/angular/e-commerce/feature/cart').then(
-        (m) => m.CartComponent
+        (m) => m.CartComponent,
       ),
     providers: [provideState(cartFeature), provideEffects({ loadCart })],
   },
