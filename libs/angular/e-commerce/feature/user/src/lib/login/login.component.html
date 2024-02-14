@@ -28,7 +28,6 @@
       placeholder="username"
       formControlName="username"
     />
-    <mat-hint>The username is your email address</mat-hint>
     @if (loginForm.hasError('email', 'username')) {
       <mat-error>The username should be a valid email address</mat-error>
     }
@@ -44,7 +43,7 @@
       formControlName="password"
     />
     @if (loginForm.hasError('minlength', 'password')) {
-      <mat-error>The password should be at least 8 characters long</mat-error>
+      <mat-error>The password should be at least 5 characters long</mat-error>
     }
     @if (loginForm.hasError('maxlength', 'password')) {
       <mat-error>The password should be at max 16 characters long</mat-error>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -9,6 +10,12 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { LoginService } from '../store/login.service';
+
+// interface LoginInfo {
+//   username: string;
+//   password: string;
+// }
 
 @Component({
   selector: 'expnx-login',
@@ -27,15 +34,34 @@ export class LoginComponent {
   search = new FormControl('');
 
   loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(8),
-      Validators.maxLength(16),
-    ]),
+    username: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required],
+    }),
+    password: new FormControl('', {
+      nonNullable: true,
+      validators: [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(16),
+      ],
+    }),
   });
 
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+  ) {}
+
   login() {
-    console.log(this.loginForm.value);
+    this.loginService
+      .login(
+        this.loginForm.value.username as string,
+        this.loginForm.value.password as string,
+      )
+      .subscribe((token) => {
+        console.log(token);
+        this.router.navigate(['/product']);
+      });
   }
 }

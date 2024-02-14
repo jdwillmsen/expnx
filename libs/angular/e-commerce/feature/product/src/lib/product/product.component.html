@@ -5,18 +5,20 @@
   <div class="products-container">
     <div *ngFor="let product of products" class="product-item">
       <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
+        <div class="image-container">
+          <img
+            class="product-image"
+            mat-card-md-image
+            src="{{ product.image }}"
+            alt="{{ product.title }}"
+          />
+        </div>
+        <mat-card-header class="header">
           <mat-card-title>{{ product.title }}</mat-card-title>
           <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
         </mat-card-header>
-        <img
-          mat-card-md-image
-          src="{{ product.image }}"
-          alt="{{ product.title }}"
-        />
-        <mat-card-content class="mat-card-actions">
-          <p>{{ product.description }}</p>
+        <mat-card-content class="description-container">
+          <p class="product-description">{{ product.description }}</p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button color="primary">Buy Now</button>
