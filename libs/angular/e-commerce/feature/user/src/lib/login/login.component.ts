@@ -61,6 +61,7 @@ export class LoginComponent {
       )
       .subscribe((token) => {
         console.log(token);
+        this.loginService.isLoggedIn = true;
         this.router.navigate(['/product']);
       });
   }

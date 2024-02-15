@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class LoginService {
+  isLoggedIn = false;
+
   constructor(private httpClient: HttpClient) {}
 
   login(username: string, password: string) {

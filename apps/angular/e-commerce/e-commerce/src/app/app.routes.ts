@@ -6,6 +6,7 @@ import {
   productFeature,
   loadProductsByCategory,
 } from '@expnx/angular/e-commerce/feature/product';
+import { loginGuard } from '@expnx/angular/e-commerce/feature/user';
 import { provideEffects } from '@ngrx/effects';
 import { provideState } from '@ngrx/store';
 
@@ -32,6 +33,7 @@ export const appRoutes: Route[] = [
       provideState(productFeature),
       provideEffects({ loadProducts, loadProductsByCategory }),
     ],
+    canMatch: [loginGuard],
   },
   {
     path: 'product/:categoryName',
@@ -43,6 +45,7 @@ export const appRoutes: Route[] = [
       provideState(productFeature),
       provideEffects({ loadProducts, loadProductsByCategory }),
     ],
+    canMatch: [loginGuard],
   },
   {
     path: 'cart',
@@ -51,5 +54,14 @@ export const appRoutes: Route[] = [
         (m) => m.CartComponent,
       ),
     providers: [provideState(cartFeature), provideEffects({ loadCart })],
+    canMatch: [loginGuard],
+  },
+  {
+    path: 'profile',
+    loadComponent: () =>
+      import('@expnx/angular/e-commerce/feature/user').then(
+        (m) => m.ProfileComponent,
+      ),
+    // canMatch: [loginGuard],
   },
 ];

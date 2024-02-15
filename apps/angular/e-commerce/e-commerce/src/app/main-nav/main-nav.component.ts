@@ -14,6 +14,7 @@ import {
 } from '@expnx/angular/e-commerce/data-access/category';
 import { Store } from '@ngrx/store';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'expnx-main-nav',
@@ -30,6 +31,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     NgFor,
     RouterLink,
     RouterOutlet,
+    MatMenuModule,
   ],
 })
 export class MainNavComponent implements OnInit {
@@ -39,7 +41,7 @@ export class MainNavComponent implements OnInit {
     .observe(Breakpoints.Handset)
     .pipe(
       map((result) => result.matches),
-      shareReplay()
+      shareReplay(),
     );
 
   categories$ = this.store.select(selectCategories);
