@@ -110,5 +110,13 @@
       "standalone": true
     }
   },
-  "nxCloudAccessToken": "OGI3MDM1ZDMtYzM4MS00NDVkLThhZmYtY2RhMjhiNWNiNGE4fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "OGI3MDM1ZDMtYzM4MS00NDVkLThhZmYtY2RhMjhiNWNiNGE4fHJlYWQtd3JpdGU=",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "accessToken": "ZjIzYmJjMDYtNjQ4OC00Njk0LWJkNGEtMDFkMmIwYTU1MTgxfHJlYWQtd3JpdGU="
+      }
+    }
+  }
 }
