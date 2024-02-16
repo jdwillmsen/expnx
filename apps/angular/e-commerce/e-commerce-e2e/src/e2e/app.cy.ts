@@ -1,4 +1,3 @@
-
 describe('e-commerce-e2e', () => {
   beforeEach(() => cy.visit('/'));
 
