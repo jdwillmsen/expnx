@@ -1,0 +1,65 @@
+{
+  "name": "sb-app-1",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/spring-boot/sb-app-1/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/spring-boot/sb-app-1/build"]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/spring-boot/sb-app-1/build"]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      },
+      "outputs": ["{workspaceRoot}/apps/spring-boot/sb-app-1/build"]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      },
+      "dependsOn": ["^install"]
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      },
+      "dependsOn": ["^install"]
+    },
+    "build-image": {
+      "executor": "@nxrocks/nx-spring-boot:build-image",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      },
+      "outputs": ["{workspaceRoot}/apps/spring-boot/sb-app-1/build"]
+    },
+    "build-info": {
+      "executor": "@nxrocks/nx-spring-boot:build-info",
+      "options": {
+        "root": "apps/spring-boot/sb-app-1"
+      }
+    }
+  },
+  "tags": []
+}

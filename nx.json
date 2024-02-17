@@ -39,6 +39,9 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "install": {
+      "cache": true
     }
   },
   "plugins": [
@@ -74,7 +77,8 @@
       "options": {
         "targetName": "e2e"
       }
-    }
+    },
+    "@nxrocks/nx-spring-boot"
   ],
   "generators": {
     "@nx/angular:application": {
