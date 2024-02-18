@@ -32,6 +32,9 @@
       ],
       "@expnx/angular/e-commerce/feature/user": [
         "libs/angular/e-commerce/feature/user/src/index.ts"
+      ],
+      "@expnx/my-plugin": [
+        "libs/plugins/my-plugin/src/index.ts"
       ]
     }
   },

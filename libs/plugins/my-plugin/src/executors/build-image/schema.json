@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Build Image executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "root": {
+      "description": "The project root",
+      "type": "string"
+    },
+    "ignoreWrapper": {
+      "description": "Whether or not to use the embedded wrapper (`gradlew`) to perform build operations",
+      "type": "boolean",
+      "default": false
+    },
+    "runFromParentModule": {
+      "description": "Whether or not to run the (child) module from the context of its parent",
+      "type": "boolean",
+      "default": false
+    },
+    "args": {
+      "description": "The arguments to be passed to the underlying Spring Boot command",
+      "type": "array",
+      "default": []
+    }
+  },
+  "required": []
+}
