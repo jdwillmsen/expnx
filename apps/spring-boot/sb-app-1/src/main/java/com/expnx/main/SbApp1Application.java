@@ -11,17 +11,16 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SbApp1Application {
 
-	@Bean
-	public CommandLineRunner seedData(RoleRepository roleRepository) {
-		return (args -> {
-			Role role = new Role();
-			role.setName(RoleType.ROLE_ADMIN.name());
-			roleRepository.save(role);
-		});
-	}
+  @Bean
+  public CommandLineRunner seedData(RoleRepository roleRepository) {
+    return (args -> {
+      Role role = new Role();
+      role.setName(RoleType.ROLE_ADMIN.name());
+      roleRepository.save(role);
+    });
+  }
 
-	public static void main(String[] args) {
-		SpringApplication.run(SbApp1Application.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(SbApp1Application.class, args);
+  }
 }

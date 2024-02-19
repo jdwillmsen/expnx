@@ -5,6 +5,7 @@ plugins {
 	id("org.springframework.boot") version "3.2.2"
 	id("io.spring.dependency-management") version "1.1.4"
 	id("com.google.cloud.tools.jib") version "3.4.0"
+	id("com.diffplug.spotless") version "6.25.0"
 	id("maven-publish")
 }
 
@@ -19,6 +20,21 @@ java {
 configurations {
 	compileOnly {
 		extendsFrom(configurations.annotationProcessor.get())
+	}
+}
+
+spotless {
+	format("misc") {
+		target("*.gradle", ".gitattributes", ".gitignore")
+
+		trimTrailingWhitespace()
+		indentWithTabs()
+		endWithNewline()
+	}
+
+	java {
+		googleJavaFormat()
+		formatAnnotations()
 	}
 }
 
