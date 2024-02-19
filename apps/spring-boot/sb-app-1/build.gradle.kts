@@ -6,6 +6,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.4"
 	id("com.google.cloud.tools.jib") version "3.4.0"
 	id("com.diffplug.spotless") version "6.25.0"
+	id("net.researchgate.release") version "3.0.2"
 	id("maven-publish")
 }
 
