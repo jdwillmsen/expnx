@@ -53,6 +53,9 @@
         "root": "apps/spring-boot/sb-app-1"
       },
       "outputs": ["{workspaceRoot}/apps/spring-boot/sb-app-1/build"]
+    },
+    "lint": {
+      "command": "echo Ignored in project configuration"
     }
   },
   "tags": ["type:app", "scope:sb-app-1", "framework:spring-boot"]
