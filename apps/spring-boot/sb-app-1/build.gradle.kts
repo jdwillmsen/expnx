@@ -26,7 +26,6 @@ configurations {
 spotless {
 	format("misc") {
 		target("*.gradle", ".gitattributes", ".gitignore")
-
 		trimTrailingWhitespace()
 		indentWithTabs()
 		endWithNewline()
@@ -34,6 +33,7 @@ spotless {
 
 	java {
 		googleJavaFormat()
+		removeUnusedImports()
 		formatAnnotations()
 	}
 }
