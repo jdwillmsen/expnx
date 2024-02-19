@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.expnx"
-version = 0.0.1
+version = "0.0.1-SNAPSHOT"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_21
@@ -95,6 +95,6 @@ publishing {
 	}
 }
 
-release {
-	versionPropertyFile = "build.gradle.kts"
-}
+//release {
+//	versionPropertyFile = "build.gradle.kts"
+//}
