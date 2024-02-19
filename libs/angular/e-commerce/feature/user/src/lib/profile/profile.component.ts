@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -32,8 +32,6 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './profile.component.scss',
 })
 export class ProfileComponent implements OnInit {
-  // user = signal({});
-
   user = toSignal(this.userService.getUser());
 
   profileForm!: FormGroup;

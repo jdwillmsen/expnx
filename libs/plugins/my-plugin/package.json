@@ -2,8 +2,8 @@
   "name": "@expnx/my-plugin",
   "version": "0.0.1",
   "dependencies": {
-    "@nx/devkit": "18.0.4",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "nx": "^18.0.4"
   },
   "type": "commonjs",
   "main": "./src/index.js",
