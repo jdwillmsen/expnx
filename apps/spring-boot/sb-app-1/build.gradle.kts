@@ -94,3 +94,7 @@ publishing {
 		}
 	}
 }
+
+release {
+	versionPropertyFile = "build.gradle.kts"
+}
