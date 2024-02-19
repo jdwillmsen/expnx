@@ -95,6 +95,35 @@ publishing {
 	}
 }
 
-//release {
-//	versionPropertyFile = "build.gradle.kts"
-//}
+release {
+	failOnCommitNeeded = true
+	failOnPublishNeeded = true
+	failOnSnapshotDependencies = true
+	failOnUnversionedFiles = true
+	failOnUpdateNeeded = true
+	revertOnFail = true
+	preCommitText = ""
+	preTagCommitMessage = "[Gradle Release Plugin] - pre tag commit: "
+	tagCommitMessage = "[Gradle Release Plugin] - creating tag: "
+	newVersionCommitMessage = "[Gradle Release Plugin] - new version commit: "
+	tagTemplate = "$version"
+	versionPropertyFile = "gradle.properties"
+	snapshotSuffix = "-SNAPSHOT"
+	pushReleaseVersionBranch = null
+	buildTasks = emptyList()
+	ignoredSnapshotDependencies = emptyList()
+
+	git {
+		requireBranch.set("main")
+		pushToRemote.set("origin")
+		pushToBranchPrefix.set("")
+		commitVersionFileOnly.set(false)
+		signTag.set(false)
+	}
+
+	svn {
+		username.set(null)
+		password.set(null)
+		pinExternals.set(false) // allows to pin the externals when tagging, requires subversion client >= 1.9.0
+	}
+}
