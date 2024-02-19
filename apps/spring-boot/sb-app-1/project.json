@@ -47,18 +47,12 @@
       },
       "dependsOn": ["^install"]
     },
-    "build-image": {
-      "executor": "@nxrocks/nx-spring-boot:build-image",
+    "build-docker-image": {
+      "executor": "@expnx/my-plugin:build-image",
       "options": {
         "root": "apps/spring-boot/sb-app-1"
       },
       "outputs": ["{workspaceRoot}/apps/spring-boot/sb-app-1/build"]
-    },
-    "build-info": {
-      "executor": "@nxrocks/nx-spring-boot:build-info",
-      "options": {
-        "root": "apps/spring-boot/sb-app-1"
-      }
     }
   },
   "tags": ["type:app", "scope:sb-app-1", "framework:spring-boot"]
