@@ -120,10 +120,4 @@ release {
 		commitVersionFileOnly.set(false)
 		signTag.set(false)
 	}
-
-	svn {
-		username.set(null)
-		password.set(null)
-		pinExternals.set(false) // allows to pin the externals when tagging, requires subversion client >= 1.9.0
-	}
 }
