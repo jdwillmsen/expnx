@@ -106,7 +106,7 @@ release {
 	preTagCommitMessage = "[Gradle Release Plugin] - pre tag commit: "
 	tagCommitMessage = "[Gradle Release Plugin] - creating tag: "
 	newVersionCommitMessage = "[Gradle Release Plugin] - new version commit: "
-	tagTemplate = "$name-v${project.findProperty("version")}"
+	tagTemplate = "$name-v${version.toString().replace("-SNAPSHOT", "")}"
 	versionPropertyFile = "gradle.properties"
 	snapshotSuffix = "-SNAPSHOT"
 	pushReleaseVersionBranch = null
