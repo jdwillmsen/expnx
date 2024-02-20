@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.expnx"
-version = "0.0.1-SNAPSHOT"
+version = project.findProperty("version") ?: "Unknown"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_21
@@ -106,7 +106,7 @@ release {
 	preTagCommitMessage = "[Gradle Release Plugin] - pre tag commit: "
 	tagCommitMessage = "[Gradle Release Plugin] - creating tag: "
 	newVersionCommitMessage = "[Gradle Release Plugin] - new version commit: "
-	tagTemplate = "$version"
+	tagTemplate = "$name-v$version"
 	versionPropertyFile = "gradle.properties"
 	snapshotSuffix = "-SNAPSHOT"
 	pushReleaseVersionBranch = null
