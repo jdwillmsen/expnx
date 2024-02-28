@@ -18,7 +18,7 @@
       "!{projectRoot}/**/*.cy.[jt]s?(x)",
       "!{projectRoot}/cypress.config.[jt]s"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/go.work"]
   },
   "targetDefaults": {
     "@angular-devkit/build-angular:browser": {
@@ -83,7 +83,8 @@
         "targetName": "e2e"
       }
     },
-    "@nxrocks/nx-spring-boot"
+    "@nxrocks/nx-spring-boot",
+    "@nx-go/nx-go"
   ],
   "generators": {
     "@nx/angular:application": {
