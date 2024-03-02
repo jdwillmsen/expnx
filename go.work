@@ -1,1 +1,6 @@
 go 1.22
+
+use (
+	./apps/go/hello-world
+	./libs/go/greetings/feature
+)
