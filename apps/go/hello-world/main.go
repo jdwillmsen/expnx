@@ -7,9 +7,10 @@ import (
 )
 
 func main() {
-	message, err := greetings.Greetings("Jake")
+	names := []string{"Logan", "Jake", "Josh", "Callie", "Thomas", "Sydney", "Carsten", "Taylor"}
+	messages, err := greetings.Greetings(names)
 	if err != nil {
 		slog.Error(err.Error())
 	}
-	fmt.Println(message)
+	fmt.Println(messages)
 }

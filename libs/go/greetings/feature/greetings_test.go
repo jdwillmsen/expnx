@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func TestGreetings(t *testing.T) {
-	_, err := Greetings("works")
+func TestGreeting(t *testing.T) {
+	_, err := Greeting("works")
 	if err != nil {
 		t.Error(err)
 	}
