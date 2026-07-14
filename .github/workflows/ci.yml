@@ -27,6 +27,12 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+      # sb-app-1 uses Spring Boot 3.2 gradle plugin, which requires Java 17;
+      # the runner's default JAVA_HOME points at 11
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
