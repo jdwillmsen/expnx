@@ -70,15 +70,15 @@ jib {
 	from {
 		image = "azul/zulu-openjdk-alpine:21-jre"
 		auth {
-			username = property("dockerUsername").toString()
-			password = property("dockerPassword").toString()
+			username = findProperty("dockerUsername")?.toString() ?: ""
+			password = findProperty("dockerPassword")?.toString() ?: ""
 		}
 	}
 	to {
 		image = "jdwillmsen/sb-app-1"
 		auth {
-			username = property("dockerUsername").toString()
-			password = property("dockerPassword").toString()
+			username = findProperty("dockerUsername")?.toString() ?: ""
+			password = findProperty("dockerPassword")?.toString() ?: ""
 		}
 		tags = setOf("latest", "${project.version}")
 	}
